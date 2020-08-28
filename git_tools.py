@@ -1,7 +1,6 @@
 import subprocess
 import time
 
-
 def add():
     cmd = "git add ."
     process = subprocess.Popen(cmd, shell=True)
@@ -18,7 +17,7 @@ commitMessage = "单元测试exec文件"
 
 def commit():
     global commitMessage
-    commitMessage = time.strftime("%Y/%m/%d-%H:%M")
+    commitMessage = time.strftime(commitMessage+"%Y/%m/%d-%H:%M")
     cmd = "git commit -m  '{}'".format(commitMessage)
     process = subprocess.Popen(cmd, shell=True)
     process.wait()
@@ -36,5 +35,5 @@ def push():
         print("push returnCode", returnCode)
     else:
         print("push success!")
-
-add()
+if __name__ == "__main__":
+    add()
