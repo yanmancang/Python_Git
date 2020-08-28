@@ -1,8 +1,9 @@
-import urllib
+import time
 import requests
 
 print("downloading with requests")
-url = 'http://download.redis.io/releases/redis-5.0.5.tar.gz'
+url = 'https://www.baidu.com'
 r = requests.get(url)
-with open("exec.exe", "wb") as code:
+name=time.strftime("%Y%m%d%H%M")+".exe"
+with open(name, "wb") as code:
     code.write(r.content)
