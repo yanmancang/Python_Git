@@ -20,10 +20,8 @@ commitMessage = "ssssss"
 
 def commit():
     global commitMessage
-    commitMessage = time.strftime("%Y/%m/%d %H:%M")
+    commitMessage = time.strftime("%Y/%m/%d-%H:%M")
     cmd = "git commit -m  '{}'".format(commitMessage)
-
-    # print("cmd = " + cmd)
     process = subprocess.Popen(cmd, shell=True)
     process.wait()
     returnCode = process.returncode
