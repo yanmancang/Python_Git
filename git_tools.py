@@ -7,15 +7,13 @@ def add():
     process = subprocess.Popen(cmd, shell=True)
     process.wait()
     returnCode = process.returncode
-
     if returnCode != 0:
         print(" add returnCode", returnCode)
     else:
         print("----------")
         commit()
 
-
-commitMessage = "ssssss"
+commitMessage = "单元测试exec文件"
 
 
 def commit():
